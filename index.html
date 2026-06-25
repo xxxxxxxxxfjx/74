@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>74套大屏数据可视化 - 项目导航</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #0a0f1e 0%, #1a1f3e 50%, #0d1225 100%);
+    min-height: 100vh;
+    color: #fff;
+    padding-bottom: 40px;
+}
+.header {
+    text-align: center;
+    padding: 40px 20px 20px;
+}
+.header h1 {
+    font-size: 2.2em;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+.header p {
+    color: #6b7d99;
+    font-size: 0.95em;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 10px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    color: #bcc8d8;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+.card:hover {
+    background: rgba(79,172,254,0.12);
+    border-color: rgba(79,172,254,0.4);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79,172,254,0.15);
+}
+.card:hover::before { opacity: 1; }
+.footer {
+    text-align: center;
+    padding: 30px;
+    color: #4a5a78;
+    font-size: 0.8em;
+}
+@media (max-width: 600px) {
+    .grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 6px; }
+    .card { padding: 14px 6px; font-size: 0.85em; }
+    .header h1 { font-size: 1.5em; }
+}
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>📊 大屏数据可视化</h1>
+    <p>共 75 套可视化模板 · 点击卡片进入</p>
+</div>
+<div class="grid" id="grid"></div>
+<div class="footer">🤖 Deployed via GitHub Pages</div>
+<script>
+const grid = document.getElementById('grid');
+for (let i = 1; i <= 75; i++) {
+    const a = document.createElement('a');
+    a.className = 'card';
+    a.href = i + '/';
+    a.textContent = '项目 ' + i;
+    grid.appendChild(a);
+}
+</script>
+</body>
+</html>
