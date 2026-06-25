@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>大屏可视化 - 项目26</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<style>
+    .index-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 100%);
+        color: #fff;
+    }
+    .index-container h1 {
+        font-size: 2.5em;
+        margin-bottom: 0.3em;
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .index-container .subtitle {
+        color: #8899aa;
+        margin-bottom: 2em;
+        font-size: 1em;
+    }
+    .nav-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+        max-width: 800px;
+        width: 90%;
+    }
+    .nav-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 28px 20px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 8px;
+        color: #c8d6e5;
+        text-decoration: none;
+        font-size: 1.1em;
+        transition: all 0.3s ease;
+    }
+    .nav-card:hover {
+        background: rgba(79,172,254,0.15);
+        border-color: rgba(79,172,254,0.5);
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(79,172,254,0.2);
+    }
+</style>
+</head>
+<body>
+<div class="index-container">
+    <h1>大屏数据可视化</h1>
+    <p class="subtitle">请选择要查看的模块</p>
+    <div class="nav-grid">
+        <a href="activity.html" class="nav-card">🎯 活动情况分析</a>
+        <a href="analysis.html" class="nav-card">📊 警情警力分析</a>
+        <a href="people.html" class="nav-card">👥 人口分析</a>
+        <a href="public.html" class="nav-card">🏛️ 警务公开</a>
+        <a href="traffic.html" class="nav-card">🚗 交通分析</a>
+    </div>
+</div>
+</body>
+</html>
